@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'routes/app_routes.dart';
+import 'screens/main_scaffold.dart';
 
 void main() {
   runApp(const FinancnaApp());
@@ -12,10 +14,8 @@ class FinancnaApp extends StatelessWidget {
     return MaterialApp(
       title: 'Finančná App',
       theme: ThemeData.dark(),
-      home: Scaffold(
-        appBar: AppBar(title: const Text('Finančná App')),
-        body: const Center(child: Text('Vitaj v novej aplikácii!')),
-      ),
+      routes: appRoutes,
+      initialRoute: '/',
     );
   }
 }
