@@ -1,0 +1,21 @@
+
+workflows:
+  default-workflow:
+    name: Default Flutter Build
+    max_build_duration: 30
+    environment:
+      flutter: stable
+      xcode: latest
+    scripts:
+      - name: Install dependencies
+        script: flutter pub get
+      - name: Run analyzer
+        script: flutter analyze
+      - name: Run tests
+        script: flutter test
+      - name: Build APK
+        script: flutter build apk --release
+    artifacts:
+      - build/**/outputs/**/*.apk
+      - build/**/outputs/**/*.aab
+      - build/**/app/outputs/**/*.apk
